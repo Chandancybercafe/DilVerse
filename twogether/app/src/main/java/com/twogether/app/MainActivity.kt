@@ -77,6 +77,8 @@ fun AuthScreen(page:String, setPage:(String)->Unit, name:String, setName:(String
                 Text("Demo mode • Authentication will connect to Firebase in the next setup step", color=Muted, fontSize=11.sp)
             }
         }
+        Spacer(Modifier.height(18.dp))
+        Text("Made by Yuvie ♡", color=Lavender, fontSize=12.sp, fontWeight=FontWeight.Medium)
     }
 }
 
@@ -122,6 +124,7 @@ fun HomeScreen(tab:String, setTab:(String)->Unit, mood:String, setMood:(String)-
             Button(onClick={},modifier=Modifier.fillMaxWidth()) { Text("Connect (demo)") }
             Text("Prototype preview: these cards are UI placeholders. Cloud sync, calls, chat, uploads and invite pairing need backend credentials and services.", color=Muted, fontSize=12.sp)
         }
+        Text("Made by Yuvie ♡", color=Lavender, fontSize=12.sp, modifier=Modifier.fillMaxWidth().padding(vertical=8.dp), textAlign=androidx.compose.ui.text.style.TextAlign.Center)
         NavigationBar(containerColor=Card) {
             listOf("Home","Chat","Play","Moments","Us").forEach { item ->
                 NavigationBarItem(selected=tab==item, onClick={setTab(item)}, icon={Icon(when(item) { "Home"->Icons.Default.Home; "Chat"->Icons.Default.Chat; "Play"->Icons.Default.SportsEsports; "Moments"->Icons.Default.PhotoCamera; else->Icons.Default.Favorite }, item)}, label={Text(item)})
